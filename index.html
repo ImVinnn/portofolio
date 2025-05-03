@@ -1,135 +1,37 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio Banyuputra</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #0f0f0f;
-      --bg-light: #1c1c1c;
-      --text-main: #f0f0f0;
-      --accent: #4f46e5;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      background: var(--bg-light);
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 1px solid #333;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-    }
-
-    header p {
-      color: #aaa;
-    }
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 960px;
-      margin: auto;
-      animation: fadeUp 1s ease-in-out;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .skills, .projects {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .card {
-      background: var(--bg-light);
-      padding: 1.5rem;
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Mohammad Banyuputra Eka Pramudhita</h1>
-    <p>Web Developer | Programmer | Anti-Nigger</p>
-  </header>
+    <header>
+        <h1>Mohammad Banyuputra Eka Pramudhita</h1>
+        <p>Web Developer | Mahasiswa Informatika</p>
+    </header>
 
-  <section id="about">
-    <h2>Tentang Saya</h2>
-    <p>gatau pokoknya benci orang hitam.</p>
-  </section>
+    <section class="projects">
+        <h2>Proyek Saya</h2>
+        <ul>
+            <li>
+                <h3>Aplikasi Todo List</h3>
+                <p>Aplikasi sederhana untuk mengatur daftar tugas harian menggunakan JavaScript.</p>
+            </li>
+            <li>
+                <h3>Website Profil Kampus</h3>
+                <p>Website statis HTML & CSS untuk menampilkan informasi kampus secara rapi dan menarik.</p>
+            </li>
+            <li>
+                <h3>Game Tetris Web</h3>
+                <p>Game tetris yang dibuat dengan HTML5 Canvas dan JavaScript.</p>
+            </li>
+        </ul>
+    </section>
 
-  <section id="skills">
-    <h2>Keahlian</h2>
-    <div class="skills">
-      <div class="card">HTML + CSS</div>
-      <div class="card">JavaScript</div>
-      <div class="card"> C </div>
-      <div class="card"></div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Proyek</h2>
-    <div class="projects">
-      <div class="card">Website Portofolio</div>
-      <div class="card">Aplikasi To-Do List</div>
-      <div class="card">Web Bokep</div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Kontak</h2>
-    <p>Email: m.banyuputraekap@email.com<br>Instagram : @gwputraaaa </p>
-  </section>
-
-  <footer>
-    &copy; 2025 Mohammad Banyuputra Eka Pramudhita. Semua hak dilindungi.
-  </footer>
+    <footer>
+        <p>© 2025 Nama Anda. Dibuat dengan HTML & CSS.</p>
+    </footer>
 </body>
 </html>
