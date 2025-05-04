@@ -2,59 +2,155 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    background-color: #111;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 20px;
 }
 
 header {
-    background-color: #1e2a38;
-    color: white;
-    padding: 30px 20px;
     text-align: center;
+    padding: 40px 20px;
+    background-color: #1a1a1a;
+    border-bottom: 3px solid orange;
     border-radius: 10px;
 }
 
+.profile-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top; /* Fokus ke atas */
+    border-radius: 50%;
+    border: 5px solid orange;
+    overflow: hidden;
+}
+
+
+
+.profile-img:hover {
+    transform: scale(1.1); /* Zoom 20% */
+}
+
+
 header h1 {
     font-size: 2.5em;
+    color: orange;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+/* TENTANG SAYA */
+.about {
+    margin-top: 40px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid orange;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.about h2 {
+    color: orange;
     margin-bottom: 10px;
 }
 
+.about p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* PROJECT SECTION */
 .projects {
     margin-top: 40px;
 }
 
 .projects h2 {
-    font-size: 1.8em;
+    font-size: 2em;
     margin-bottom: 20px;
-    color: #1e2a38;
+    color: orange;
+    text-align: center;
 }
 
 .projects ul {
-    list-style-type: none;
+    list-style: none;
 }
 
 .projects li {
-    background-color: white;
+    background-color: #1a1a1a;
     padding: 20px;
-    margin-bottom: 15px;
-    border-left: 5px solid #1e2a38;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border-left: 5px solid orange;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projects li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.2);
 }
 
 .projects h3 {
-    margin-bottom: 10px;
-    color: #333;
+    color: orange;
+    margin-bottom: 8px;
 }
 
+.projects p {
+    color: #ccc;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ffb703, #fb8500);
+    color: #000;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255, 183, 3, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #ffd166, #ffb703);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 183, 3, 0.5);
+}
+
+
+/* Footer */
 footer {
-    margin-top: 50px;
     text-align: center;
-    color: #777;
+    margin-top: 50px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Animasi */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
