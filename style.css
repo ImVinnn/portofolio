@@ -151,22 +151,23 @@ a:hover {
 .social-links {
     list-style: none;
     padding: 0;
+    margin: 20px 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .social-links a {
-    text-decoration: none;
+    font-size: 28px;
     color: #ffb703;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .social-links a:hover {
     color: #ffffff;
+    transform: scale(1.2);
 }
+
 
 
 /* Footer */
