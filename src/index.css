@@ -73,7 +73,7 @@
 /* ===== Reusable components ===== */
 @layer components {
   .wrap {
-    width: min(100% - 3rem, 72rem);
+    width: min(100% - 4rem, 88rem);
     margin-inline: auto;
   }
 

@@ -31,6 +31,7 @@ const projects = [
     meta: [
       ['Tahun', '2026'],
       ['Role', 'Developer'],
+      ['Tech Stack', 'ReactJS, Vite, Tailwind CSS, Antigravity AI'],
     ],
     links: [
       { href: 'https://kreasia-ai-social-media-analyzer.vercel.app/', label: 'Live Demo', symbol: '↗' },
