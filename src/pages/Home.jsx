@@ -8,7 +8,7 @@ import useReveal from '../hooks/useReveal.js'
 const projects = [
   {
     badge: 'Tugas Project Kuliah',
-    image: '/images/Project3.png',
+    image: `${import.meta.env.BASE_URL}images/Project3.png`,
     alt: 'Screenshot Rolling Ball 3D Game',
     title: 'Rolling Ball 3D Game',
     desc: 'Game 3D sederhana di mana pemain menggerakkan bola menggelinding melewati arena. Dibangun dari nol menggunakan bahasa C dengan library GLUT (OpenGL) di IDE Dev-C++.',
@@ -24,7 +24,7 @@ const projects = [
   },
   {
     badge: 'Tugas Project Kuliah',
-    image: '/images/Project2.png',
+    image: `${import.meta.env.BASE_URL}images/Project2.png`,
     alt: 'Screenshot Kreasia — AI Social Media Analyzer',
     title: 'Kreasia — AI Social Media Analyzer',
     desc: 'Aplikasi web untuk menganalisis konten media sosial dengan bantuan AI. Dikerjakan sebagai tugas project matakuliah Kecerdasan Buatan dan di-deploy secara online di Vercel.',
@@ -66,7 +66,7 @@ export default function Home() {
         <div className="max-md:order-first max-md:max-w-80 animate-rise [animation-delay:200ms]">
           <img
             className="mx-auto aspect-[4/5] w-full max-w-96 rounded-card object-cover"
-            src="/images/awsAS.jpg"
+            src={`${import.meta.env.BASE_URL}images/awsAS.jpg`}
             alt="Foto diri Mohammad Banyuputra Eka Pramudhita"
           />
         </div>

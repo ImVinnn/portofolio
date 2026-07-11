@@ -67,7 +67,7 @@ export default function About() {
           <article className="flex items-start gap-6 border-y border-line py-12">
             <img
               className="size-18 shrink-0 rounded-xl bg-bg-alt object-contain"
-              src="/images/logo-HMIF.jpg"
+              src={`${import.meta.env.BASE_URL}images/logo-HMIF.jpg`}
               alt="Logo HMIF Universitas Diponegoro"
             />
             <div className="flex-1">
