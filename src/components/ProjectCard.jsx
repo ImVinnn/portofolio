@@ -1,0 +1,34 @@
+export default function ProjectCard({ badge, image, alt, title, desc, meta = [], links = [], flip = false }) {
+  return (
+    <article className="grid items-start gap-12 md:grid-cols-[1.1fr_1fr]">
+      <div className={`relative ${flip ? 'md:order-2' : ''}`}>
+        <span className="absolute left-4 top-4 z-[1] rounded-full border border-line bg-bg px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.06em] text-fg">
+          {badge}
+        </span>
+        <img className="aspect-[16/10] w-full rounded-card object-cover" src={image} alt={alt} />
+      </div>
+      <div className={flip ? 'md:order-1' : ''}>
+        <h3 className="display-title mb-3 text-h3">{title}</h3>
+        <p className="mb-6 text-muted">{desc}</p>
+        <div className="mb-6 border-t border-line pt-6">
+          <h4 className="mb-3 text-[0.8125rem] font-bold uppercase tracking-[0.15em] text-muted">Project Info</h4>
+          <dl>
+            {meta.map(([term, value]) => (
+              <div key={term} className="flex justify-between border-b border-line py-2.5">
+                <dt className="text-[0.9375rem] text-muted">{term}</dt>
+                <dd className="text-[0.9375rem] font-medium">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div className="flex flex-wrap gap-6">
+          {links.map(({ href, label, symbol }) => (
+            <a key={label} href={href} target="_blank" rel="noopener" className="link-underline">
+              {label} <span aria-hidden="true">{symbol}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </article>
+  )
+}
