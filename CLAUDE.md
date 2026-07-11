@@ -25,4 +25,3 @@ Personal portfolio site built with **React 19 + Vite + Tailwind CSS v4** (JavaSc
 - **Images** in `public/images/`, referenced as `/images/<file>`.
 - **Placeholder content**: `#` links (LinkedIn, resume) and bracketed tokens like `[Bulan Tahun]` are intentional placeholders the owner fills in manually. The "Download Resume" button is intentionally inert (`aria-disabled`).
 - Content language is Indonesian (id); section headings are stylistically in English.
-- `_old-site/` contains the pre-migration static HTML/CSS/JS version as a backup — do not edit it; it can be deleted once the React version is confirmed good.
