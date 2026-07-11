@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import SocialRow from '../components/SocialRow.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
 import ContactSection from '../components/ContactSection.jsx'
+import Typewriter from '../components/Typewriter.jsx'
+import useReveal from '../hooks/useReveal.js'
 
 const projects = [
   {
@@ -38,24 +40,29 @@ const projects = [
 ]
 
 export default function Home() {
+  const [workRef, workCls] = useReveal()
+  const [aboutRef, aboutCls] = useReveal()
+
   return (
     <>
       {/* ===== HERO ===== */}
       <section className="wrap mb-section mt-10 grid items-center gap-12 md:grid-cols-[1.2fr_1fr]">
         <div>
-          <p className="eyebrow">Portofolio Pribadi</p>
+          <p className="eyebrow animate-rise">Portofolio Pribadi</p>
           <h1 className="display-title mb-6 text-h1">
-            Hi, I am<br />Mohammad Banyuputra Eka Pramudhita.
+            <Typewriter speed={28} startDelay={200} lines={['Hi, I am', 'Mohammad Banyuputra Eka Pramudhita.']} />
           </h1>
-          <p className="mb-12 max-w-[32rem] text-muted">Mahasiswa Informatika yang suka mempelajari hal-hal baru.</p>
-          <div className="flex flex-wrap items-center gap-6">
+          <p className="mb-12 max-w-[32rem] text-muted animate-rise [animation-delay:160ms]">
+            Mahasiswa Informatika yang suka mempelajari hal-hal baru.
+          </p>
+          <div className="flex flex-wrap items-center gap-6 animate-rise [animation-delay:240ms]">
             <a href="#contact" className="btn">
               Contact Me <span className="btn__icon" aria-hidden="true"><i className="fa-solid fa-envelope" /></span>
             </a>
             <SocialRow />
           </div>
         </div>
-        <div className="max-md:order-first max-md:max-w-80">
+        <div className="max-md:order-first max-md:max-w-80 animate-rise [animation-delay:200ms]">
           <img
             className="mx-auto aspect-[4/5] w-full max-w-96 rounded-card object-cover"
             src="/images/awsAS.jpg"
@@ -66,7 +73,7 @@ export default function Home() {
 
       {/* ===== FEATURED PROJECTS ===== */}
       <section className="wrap my-section" id="work">
-        <div className="mb-12">
+        <div ref={workRef} className={`mb-12 ${workCls}`}>
           <h2 className="display-title text-h2">Featured Projects</h2>
           <p className="mt-3 max-w-[40rem] text-muted">Beberapa proyek pilihan — dari tugas kuliah sampai project pribadi.</p>
         </div>
@@ -78,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* ===== ABOUT PREVIEW ===== */}
-      <section className="wrap my-section">
+      <section ref={aboutRef} className={`wrap my-section ${aboutCls}`}>
         <p className="eyebrow">About Me</p>
         <h2 className="display-title mb-6 text-h2 leading-[1.1]">
           Mahasiswa yang suka belajar dengan<br />membuat hal-hal baru.

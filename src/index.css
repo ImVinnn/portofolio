@@ -22,6 +22,32 @@
   --radius-card: 1.25rem;
 
   --default-transition-duration: 180ms;
+
+  /* Hero entrance saat load — pakai animate-rise + [animation-delay:...] */
+  --animate-rise: rise 600ms ease-out both;
+
+  /* Kursor berkedip untuk efek Typewriter */
+  --animate-caret: caret 1s steps(2) infinite;
+
+  @keyframes caret {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 /* ===== Base ===== */
@@ -92,9 +118,18 @@
     @apply normal-case;
   }
 
+  /* Panah ↗ bergeser diagonal saat link di-hover */
+  .link-underline span {
+    @apply inline-block transition-transform;
+  }
+
+  .link-underline:hover span {
+    transform: translate(3px, -3px);
+  }
+
   /* Capability pills */
   .skill-pill {
-    @apply inline-flex items-center gap-2.5 rounded-full border border-line px-6 py-2.5 text-[0.9375rem] font-medium uppercase tracking-[0.04em] transition-colors hover:border-accent hover:text-accent;
+    @apply inline-flex items-center gap-2.5 rounded-full border border-line px-6 py-2.5 text-[0.9375rem] font-medium uppercase tracking-[0.04em] transition hover:-translate-y-0.5 hover:border-accent hover:text-accent;
   }
 
   /* Contact form fields */
@@ -114,6 +149,18 @@
   .form-field textarea {
     resize: vertical;
   }
+
+  /* Scroll reveal — dipasang lewat hook useReveal (src/hooks/useReveal.js) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity 600ms ease-out, transform 600ms ease-out;
+  }
+
+  .reveal--visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ===== Reduced motion ===== */
@@ -126,6 +173,8 @@
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
   }
 }

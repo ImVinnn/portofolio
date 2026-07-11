@@ -1,5 +1,6 @@
 import SocialRow from '../components/SocialRow.jsx'
 import ContactSection from '../components/ContactSection.jsx'
+import useReveal from '../hooks/useReveal.js'
 
 const skills = [
   { name: 'HTML', icon: 'https://cdn.simpleicons.org/html5' },
@@ -13,10 +14,13 @@ const skills = [
 ]
 
 export default function About() {
+  const [capRef, capCls] = useReveal()
+  const [expRef, expCls] = useReveal()
+
   return (
     <>
       {/* ===== ABOUT ME ===== */}
-      <section className="wrap my-section">
+      <section className="wrap my-section animate-rise">
         <div className="grid items-start gap-12 md:grid-cols-[1fr_1.4fr]">
           <h1 className="display-title text-h2">About Me</h1>
           <div>
@@ -42,7 +46,7 @@ export default function About() {
       </section>
 
       {/* ===== MY CAPABILITIES ===== */}
-      <section className="wrap my-section">
+      <section ref={capRef} className={`wrap my-section ${capCls}`}>
         <div className="grid items-start gap-12 md:grid-cols-[1fr_1.4fr]">
           <h2 className="display-title text-h2">My Capabilities</h2>
         </div>
@@ -57,7 +61,7 @@ export default function About() {
       </section>
 
       {/* ===== MY EXPERIENCE ===== */}
-      <section className="wrap my-section">
+      <section ref={expRef} className={`wrap my-section ${expCls}`}>
         <h2 className="display-title text-h2">My Experience</h2>
         <div className="mt-12 flex flex-col">
           <article className="flex items-start gap-6 border-y border-line py-12">

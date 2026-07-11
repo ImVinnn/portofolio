@@ -1,11 +1,21 @@
+import useReveal from '../hooks/useReveal.js'
+
 export default function ProjectCard({ badge, image, alt, title, desc, meta = [], links = [], flip = false }) {
+  const [ref, revealCls] = useReveal()
+
   return (
-    <article className="grid items-start gap-12 md:grid-cols-[1.1fr_1fr]">
-      <div className={`relative ${flip ? 'md:order-2' : ''}`}>
+    <article ref={ref} className={`grid items-start gap-12 md:grid-cols-[1.1fr_1fr] ${revealCls}`}>
+      <div className={`group relative ${flip ? 'md:order-2' : ''}`}>
         <span className="absolute left-4 top-4 z-[1] rounded-full border border-line bg-bg px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.06em] text-fg">
           {badge}
         </span>
-        <img className="aspect-[16/10] w-full rounded-card object-cover" src={image} alt={alt} />
+        <div className="overflow-hidden rounded-card">
+          <img
+            className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            src={image}
+            alt={alt}
+          />
+        </div>
       </div>
       <div className={flip ? 'md:order-1' : ''}>
         <h3 className="display-title mb-3 text-h3">{title}</h3>

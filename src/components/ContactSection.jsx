@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import SocialRow from './SocialRow.jsx'
+import useReveal from '../hooks/useReveal.js'
 
 export default function ContactSection() {
   const [status, setStatus] = useState('')
+  const [ref, revealCls] = useReveal()
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -18,7 +20,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="wrap my-section grid items-start gap-12 md:grid-cols-2" id="contact">
+    <section ref={ref} className={`wrap my-section grid items-start gap-12 md:grid-cols-2 ${revealCls}`} id="contact">
       <div>
         <h2 className="display-title mb-6 text-h2">Let's Connect</h2>
         <p className="mb-3 text-muted">
