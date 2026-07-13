@@ -51,8 +51,8 @@ export default function About() {
           <h2 className="display-title text-h2">My Capabilities</h2>
         </div>
         <ul className="mt-12 flex flex-wrap gap-3">
-          {skills.map(({ name, icon }) => (
-            <li key={name} className="skill-pill">
+          {skills.map(({ name, icon }, i) => (
+            <li key={name} className="skill-pill reveal-item" style={{ '--stagger': `${i * 60}ms` }}>
               <img className="size-5" src={icon} alt="" width="20" height="20" loading="lazy" />
               {name}
             </li>
@@ -72,7 +72,7 @@ export default function About() {
             />
             <div className="flex-1">
               <div className="flex flex-wrap items-baseline justify-between gap-6 max-md:flex-col max-md:gap-1">
-                <h3 className="text-xl font-bold">Pengurusun Himpunan Mahasiswa Informatika (HMIF)</h3>
+                <h3 className="text-xl font-bold">Pengurus Himpunan Mahasiswa Informatika (HMIF)</h3>
                 <p className="whitespace-nowrap text-[0.9375rem] text-muted">31 Maret 2026 – Sekarang</p>
               </div>
               <p className="mb-3 mt-1.5 font-semibold text-accent">Universitas Diponegoro</p>

@@ -129,7 +129,12 @@
 
   /* Capability pills */
   .skill-pill {
-    @apply inline-flex items-center gap-2.5 rounded-full border border-line px-6 py-2.5 text-[0.9375rem] font-medium uppercase tracking-[0.04em] transition hover:-translate-y-0.5 hover:border-accent hover:text-accent;
+    @apply inline-flex items-center gap-2.5 rounded-full border border-line px-6 py-2.5 text-[0.9375rem] font-medium uppercase tracking-[0.04em] transition hover:border-accent hover:text-accent;
+  }
+
+  /* Lift pakai transform (bukan translate) agar tidak bentrok dengan .reveal-item */
+  .skill-pill:hover {
+    transform: translateY(-2px);
   }
 
   /* Contact form fields */
@@ -160,6 +165,21 @@
   .reveal--visible {
     opacity: 1;
     transform: none;
+  }
+
+  /* Stagger reveal — anak dari elemen ber-.reveal, delay per item via --stagger.
+     Pakai properti translate (bukan transform) agar tidak menimpa efek hover. */
+  .reveal-item {
+    opacity: 0;
+    translate: 0 0.75rem;
+    transition:
+      opacity 500ms ease-out var(--stagger, 0ms),
+      translate 500ms ease-out var(--stagger, 0ms);
+  }
+
+  .reveal--visible .reveal-item {
+    opacity: 1;
+    translate: none;
   }
 }
 

@@ -23,8 +23,12 @@ export default function ProjectCard({ badge, image, alt, title, desc, meta = [],
         <div className="mb-6 border-t border-line pt-6">
           <h4 className="mb-3 text-[0.8125rem] font-bold uppercase tracking-[0.15em] text-muted">Project Info</h4>
           <dl>
-            {meta.map(([term, value]) => (
-              <div key={term} className="flex justify-between border-b border-line py-2.5">
+            {meta.map(([term, value], i) => (
+              <div
+                key={term}
+                className="reveal-item flex justify-between border-b border-line py-2.5"
+                style={{ '--stagger': `${i * 90}ms` }}
+              >
                 <dt className="text-[0.9375rem] text-muted">{term}</dt>
                 <dd className="text-[0.9375rem] font-medium">{value}</dd>
               </div>
@@ -32,8 +36,15 @@ export default function ProjectCard({ badge, image, alt, title, desc, meta = [],
           </dl>
         </div>
         <div className="flex flex-wrap gap-6">
-          {links.map(({ href, label, symbol }) => (
-            <a key={label} href={href} target="_blank" rel="noopener" className="link-underline">
+          {links.map(({ href, label, symbol }, i) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener"
+              className="link-underline reveal-item"
+              style={{ '--stagger': `${(meta.length + i) * 90}ms` }}
+            >
               {label} <span aria-hidden="true">{symbol}</span>
             </a>
           ))}
